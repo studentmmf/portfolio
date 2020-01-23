@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal</title>
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		.modal {
+			position: fixed;
+			z-index: 9999;
+			left: 50px;
+			top: 50px;
+			min-width: 300px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3),0 6px 20px 0 rgba(0,0,0,0.2);
+		}
+		.modal-header {
+			padding: 6px 16px;
+			color: #fff;
+			font-size: 1em;
+			font-weight: bold;
+			background-color: #484646;
+			border-radius: 8px 8px 0 0;
+			border: 1px solid #656565;
+			border-bottom: none;
+		}
+		.modal-body {
+			overflow: auto;
+			padding: 16px;
+			background-color: #f2f2f2;
+			border: 1px solid #656565;
+			border-top: none;
+			border-radius: 0 0 8px 8px;
+		}
+		.modal-content {
+			position: relative;
+			padding: 8px 30px;
+			min-height: 100px;
+			text-align: center;
+			background-color: #fff;
+			border: 1px solid #d6d4d4;
+			border-radius: 7px;
+		}
+		.data {
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+		.label, .progress, .target {
+			display: inline-block;
+			text-align: left;
+			vertical-align: middle;
+		}
+		.data:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+		.label {
+			margin-right: 12px;
+			color: #616161;
+			font-weight: bold;
+			font-size: .95em;
+		}
+		.progress {
+			margin-right: -4px;
+			width: 120px;
+			height: 7px;
+			border: 3px solid #cfcfcf;
+			background-color: #cfcfcf;
+		}
+		.progress-indicator {
+			position: relative;
+			background-color: #0089d2;
+			width: 90%;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		.progress-indicator-info {
+			position: absolute;
+			right: 0;
+			top: calc(100% + 10px);
+			font-size: .95em;
+			color: #616161;
+			font-weight: bold;
+			transform: translateX(40%);
+		}
+		.progress-indicator-info:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -5px;
+			left: calc(50% - 2px);
+			width: 0; 
+			height: 0; 
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			border-bottom: 4px solid #616161;
+		}
+		.target {
+			border: 1px solid #dddada;
+			background-color: #9b9697;
+			color: #fff;
+			text-align: center;
+			border-radius: 7px;
+		}
+		.target-delim {
+			margin: 0 auto;
+			width: 90%;
+			border-color: transparent;
+			box-shadow: 0 0px 4px 0 #ccc,0 0px 10px 0 #ccc;
+		}
+		.target-title, .target-value {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.target-title { font-size: 1.1em; }
+		.target-value {
+			font-size: 1.6em;
+			font-weight: bold;
+		}
+		.text {
+			display: inline-block;
+			color: #616161;
+			vertical-align: top;
+		}
+		.info-icon {			
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background: url('info.png') 0 0 no-repeat;
+			background-size: cover;
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+	<div class="modal">
+		<div class="modal-header">
+			<h2>Target Indicator Demo</h2>
+		</div>
+		<div class="modal-body">
+			<div class="modal-content">
+				<div class="data">
+					<div class="label">Reached:</div>
+					<div class="progress">
+						<div class="progress-indicator">
+							<div class="progress-indicator-info">
+								$14
+							</div>
+						</div>
+					</div>
+					<div class="target">
+						<div class="target-title">Target</div>
+						<hr class="target-delim">
+						<div class="target-value">$15</div>
+					</div>
+				</div>
+				<div>
+					<i class="info-icon"></i>
+					<p class="text">						
+						You need $1 more to reach your target
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
